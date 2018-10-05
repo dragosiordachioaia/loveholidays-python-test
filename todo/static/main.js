@@ -1,3 +1,21 @@
+/**
+  The main idea behind it is that even though it's using direct DOM manipulation,
+  it follows a data-driven approach. To that end, I keep a global list of all
+  todos, only do operations on that and then re-render the view whenever it changes.
+
+  This obviously means that the app takes a performance hit when compared to
+  only changing the elements that need updating, but it makes for much cleaner
+  code and less bugs. In a real app, this would be handled by state machines/virtual DOM,
+  which would ensure that changes to the real DOM are minimal.
+
+  I opted for optimistic rendering in order to make the UI snappier, and whenever
+  there's a server error, the app just fetches and re-renders the state of the data
+  as it is on the server at that point.
+
+  This could be improved greatly, but I opted for the simplest approach that
+  would also work.
+**/
+
 var API_URL = "http://127.0.0.1:8000";
 
 var container = $("#todo-container");
@@ -144,6 +162,7 @@ function apiDeleteTodo(index) {
     },
   }).then(function() {}, onServerError);
 }
+
 function apiCreateTodo(callback) {
   axios({
     method: "POST",
