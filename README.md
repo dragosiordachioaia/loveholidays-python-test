@@ -1,6 +1,10 @@
 Django test
 =======================
 
+I've made the api with Django Rest Framework, and the front-end is a simple jQuery-powered page. I would have done it in React, but I've just updated my Mac to MacOS Mojave and it messed up my node installation so I couldn't get webpack to work properly anymore.
+
+The API has some basic tests in place for the views.
+
 Task
 ---------
 
