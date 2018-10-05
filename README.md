@@ -16,4 +16,6 @@ Please don't spend more than 2 hours on this. On completion, please provide a li
 
 `$ docker-compose up`
 
+The app will be found at `http://127.0.0.1:8000/home/`
+
 Please make sure your final solution still runs with docker.
