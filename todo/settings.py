@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'api',
+    'api', # this is our REST api
+    'todo', # this is to be able to load the template
 ]
 
 MIDDLEWARE = [

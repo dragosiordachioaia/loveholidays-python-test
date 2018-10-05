@@ -7,7 +7,7 @@ from .serializers import TodoSerializer
 from .models import Todo
 
 class CreateView(generics.ListCreateAPIView):
-    queryset = Todo.objects.all()
+    queryset = Todo.objects.all().order_by('date_created')
     serializer_class = TodoSerializer
 
     def perform_create(self, serializer):
